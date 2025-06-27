@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homepage with Contact Page</title>
+    <!-- You can include your existing CSS here -->
+    <style>
+      /* Basic styles (or your existing styles) */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .contact-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      h1{
+        color: rgb(34, 16, 149);
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      h3{
+        color: rgb(214, 42, 171);
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Your Existing Home Page Content -->
+    <header>
+      <h1>Welcome to Our Website</h1>
+    </header>
+    <main>
+<!-- <p>Some content for your home page.</p> -->
+      <!-- More content here -->
+    </main>
+
+    <!-- Placeholder for the React Contact Page -->
+    <div id="contact-root"></div>
+
+    <!-- Include React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Include Babel so the browser can transpile JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React code goes here -->
+    <script type="text/babel">
+      // Define the ContactPage component
+      const ContactPage = () => {
+        const [desire, setDesire] = React.useState('');
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          // Process the submission; for now, we're just logging it to the console.
+          console.log('Submitted desire:', desire);
+          setDesire('');
+        };
+
+        // Inline styles similar to our earlier example
+        const styles = {
+          container: {
+            maxWidth: '800px',
+            margin: '20px auto',
+            padding: '5px',
+            fontFamily: 'Arial, sans-serif',
+            lineHeight: '1.6',
+            color: '#333'
+          },
+          heading: {
+            textAlign: 'center',
+            marginBottom: '20px'
+          },
+          info: {
+            marginBottom: '10px'
+          },
+          link: {
+            color: '#007BFF',
+            textDecoration: 'none'
+          },
+          form: {
+            display: 'flex',
+            flexDirection: 'column'
+          },
+          label: {
+            marginBottom: '10px',
+            fontWeight: 'bold'
+          },
+          textarea: {
+            padding: '10px',
+            marginBottom: '15px',
+            fontSize: '16px'
+          },
+          button: {
+            padding: '10px',
+            backgroundColor: '#007BFF',
+            color: '#fff',
+            border: 'none',
+            fontSize: '16px',
+            cursor: 'pointer'
+          },
+          socialMedia: {
+            marginTop: '30px',
+            textAlign: 'center'
+          },
+          subHeading: {
+            marginBottom: '10px'
+          },
+          socialList: {
+            listStyle: 'none',
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '15px',
+            padding: '0'
+          },
+          socialLink: {
+            color: '#007BFF',
+            textDecoration: 'none',
+            fontSize: '18px'
+          }
+        };
+
+        return (
+          <div className="contact-container" style={styles.container}>
+            <h1 style={styles.heading}>Infinity International Marketing (IIM)</h1>
+            <h3 style={styles.heading}><i>(  Under Guntoju Info Tech Solutions  )</i></h3>
+            <div className="contact-info" style={styles.info}>
+              <p>
+                <strong>Address:</strong> H.No. 8-12-97/SG/238/E, Road No.3, Street No.5, Shiva Ganga Hills Colony,
+                Karmanghat, Hyderabad, Ranga Reddy District - 500097, Telangana State.
+              </p>
+              <p>
+                <strong>Phone:</strong>{' '}
+                <a href="tel:+91 40 35735177" style={styles.link}>
+                  +91 40 35735177
+                </a><br></br>
+                <strong>Mobile:</strong>{' '}
+                <a href="tel:9398523290" style={styles.link}>
+                  93985 23290
+                </a>
+              </p>
+              <p>
+                <strong>Email:</strong>{' '}
+                <a href="mailto:servicesgts18@gmail.com" style={styles.link}>
+                  servicesgts18@gmail.com
+                </a>
+              </p>
+            </div>
+            <form onSubmit={handleSubmit} className="contact-form" style={styles.form}>
+              <label htmlFor="desire" style={styles.label}>How can we Serve :</label>
+              <textarea
+                id="desire"
+                name="desire"
+                value={desire}
+                onChange={(e) => setDesire(e.target.value)}
+                placeholder="Enter your required service & contact information here..."
+                rows="5"
+                style={styles.textarea}
+              />
+              <button type="submit" style={styles.button}>
+                Submit
+              </button>
+              </form>
+            <div className="social-media" style={styles.socialMedia}>
+              <h3 style={styles.subHeading}>Follow us on Social Media</h3>
+              <ul style={styles.socialList}>
+                <li>
+                  <a href="#" style={styles.socialLink}>Facebook</a>
+                </li>
+                <li>
+                  <a href="#" style={styles.socialLink}>Twitter</a>
+                </li>
+                <li>
+                  <a href="#" style={styles.socialLink}>LinkedIn</a>
+                </li>
+                {/* You can add additional social links here */}
+              </ul>
+            </div>
+          </div>
+        );
+      };
+
+      // Render the ContactPage component into the specified DOM element
+      ReactDOM.render(<ContactPage />, document.getElementById('contact-root'));
+    </script>
+  </body>
+</html>

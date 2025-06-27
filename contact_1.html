@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homepage with Contact Page</title>
+    <!-- You can include your existing CSS here -->
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-container {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  h1 {
+    color: rgb(34, 16, 149);
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    color: rgb(214, 42, 171);
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 10px 0;
+  }
+</style>
+
+  </head>
+  <body>
+    <!-- Your Existing Home Page Content -->
+    <header>
+      <h1>Welcome to Our Website</h1>
+    </header>
+    <main>
+<!-- <p>Some content for your home page.</p> -->
+      <!-- More content here -->
+    </main>
+
+    <!-- Placeholder for the React Contact Page -->
+    <div id="contact-root"></div>
+
+    <!-- Include React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Include Babel so the browser can transpile JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React code goes here -->
+    <script type="text/babel">
+      // Define the ContactPage component
+      const ContactPage = () => {
+        const [desire, setDesire] = React.useState('');
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          // Process the submission; for now, we're just logging it to the console.
+          console.log('Submitted desire:', desire);
+          setDesire('');
+        };
+
+        // Inline styles similar to our earlier example
+        <script type="text/babel">
+  // Define the ContactPage component
+  const ContactPage = () => {
+    const [desire, setDesire] = React.useState('');
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log('Submitted desire:', desire);
+      setDesire('');
+    };
+
+    // ⬇️ Paste the updated styles object right here ⬇️
+    const styles = {
+      container: {
+        maxWidth: '600px',
+        margin: '10px auto',
+        padding: '10px',
+        fontFamily: 'Arial, sans-serif',
+        lineHeight: '1.4',
+        color: '#333'
+      },
+      heading: {
+        textAlign: 'center',
+        marginBottom: '10px',
+        fontSize: '22px'
+      },
+      ...
+    };
+
+    return (
+      <div className="contact-container" style={styles.container}>
+        ...
+      </div>
+    );
+  };
+
+  // Render the component
+  ReactDOM.render(<ContactPage />, document.getElementById('contact-root'));
+</script>
+
+
+  <label htmlFor="contact" style={styles.label}>Contact No.:</label>
+  <input
+    type="tel"
+    id="contact"
+    name="contact"
+    required
+    style={styles.textarea}
+  />
+
+  <label htmlFor="date" style={styles.label}>Date:</label>
+  <input
+    type="text"
+    id="date"
+    name="date"
+    value={new Date().toLocaleDateString()}
+    readOnly
+    style={styles.textarea}
+  />
+
+  <label htmlFor="email" style={styles.label}>Mail ID:</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    style={styles.textarea}
+  />
+
+  <label htmlFor="desire" style={styles.label}>Required Service:</label>
+  <textarea
+    id="desire"
+    name="desire"
+    value={desire}
+    onChange={(e) => setDesire(e.target.value)}
+    placeholder="Enter your required service details here..."
+    rows="5"
+    style={styles.textarea}
+  />
+
+  <button type="submit" style={styles.button}>
+    Submit
+  </button>
+</form>
+
+            <div className="social-media" style={styles.socialMedia}>
+              <h3 style={styles.subHeading}>Follow us on Social Media</h3>
+              <ul style={styles.socialList}>
+                <li>
+                  <a href="#" style={styles.socialLink}>Facebook</a>
+                </li>
+                <li>
+                  <a href="#" style={styles.socialLink}>Twitter</a>
+                </li>
+                <li>
+                  <a href="#" style={styles.socialLink}>LinkedIn</a>
+                </li>
+                {/* You can add additional social links here */}
+              </ul>
+            </div>
+          </div>
+        );
+      };
+
+      // Render the ContactPage component into the specified DOM element
+      ReactDOM.render(<ContactPage />, document.getElementById('contact-root'));
+    </script>
+  </body>
+</html>
